@@ -1,0 +1,250 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #232526, #414345);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Playfair Display', serif;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+    font-style: italic;
+}
+
+/* Poems Section */
+#poems {
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+/* General Styles for the Animated Glowing Text */
+.animated-glowing-text {
+    font-size: 1.2em;
+    font-family: 'Cormorant Garamond', serif;
+    color: #fff;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 0 0 5px #ff9b9b, 0 0 10px #ff7eb3, 0 0 20px #ff758c;
+    animation: typing 4s steps(40) 1s forwards, glow 1.5s infinite;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Glowing Effect Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff9b9b, 0 0 10px #ff7eb3, 0 0 20px #ff758c;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff758c, 0 0 20px #ff7eb3, 0 0 30px #ff9b9b;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff9b9b, 0 0 10px #ff7eb3, 0 0 20px #ff758c;
+    }
+}
+
+
+
+/* Poem Box */
+.poem {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.poem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Glowing Effect */
+.poem::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 117, 140, 0.8),
+        rgba(255, 126, 179, 0.8),
+        rgba(76, 161, 175, 0.8)
+    );
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poem:hover::before {
+    opacity: 1;
+}
+
+/* Left Section: Poem Text */
+.poem-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.poem-content h2 {
+    font-size: 1.5em;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #ffebcd;
+}
+
+.poem-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+    color: #f0f0f0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.poem-content .author {
+    font-size: 1em;
+    font-style: italic;
+    color: #dcdcdc;
+}
+
+/* Right Section: Image Frame */
+.poem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border: 4px solid #fff;
+    animation: rotateFrame 10s linear infinite;
+}
+
+.poem img:hover {
+    animation: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotateFrame {
+    0% {
+        transform: unset;
+    }
+    100% {
+        transform: unset;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 0.9em;
+}
+
+#about-me {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* About Box Styling */
+.about-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    animation: glowEffect 3s infinite ease-in-out;
+}
+
+/* Glowing Animation for the About Box */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 5px #ff7eb3, 0 0 10px #ff7eb3, 0 0 15px #ff7eb3;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff7eb3, 0 0 20px #ff7eb3, 0 0 30px #ff7eb3;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff7eb3, 0 0 10px #ff7eb3, 0 0 15px #ff7eb3;
+    }
+}
+
+/* Author's Photo */
+.poet-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    margin-bottom: 20px;
+}
+
+/* About Me Content */
+.about-content h2 {
+    font-size: 2em;
+    color: #ffebcd;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+    color: #f0f0f0;
+    margin: 0;
+    line-height: 1.8;
+}
